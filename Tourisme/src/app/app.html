@@ -1,0 +1,18 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar color="danger"> 
+            <ion-title> Menu</ion-title>
+        </ion-toolbar>
+        
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <!--menuClose: veut dire a chaque fois qu'on selectionne un item du menu, fermer la page menu. ion-item:liste les item du menu-->
+            <button menuClose="" ion-item="" *ngFor="let m of menus" (click)="OnPage(m)">
+                {{m.title}}
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav><!--#content: une fois que le menu change, on passe le contenu ayant pour id #content et ion-nav va router vers cette page-->
